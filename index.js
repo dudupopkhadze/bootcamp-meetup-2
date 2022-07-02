@@ -102,6 +102,11 @@ function createUserCard(name, email, imageLink) {
   userImageTag.classList.add("userImage");
   userContainer.appendChild(userImageTag);
 
+  const userDeleteButton = document.createElement("button");
+  userDeleteButton.textContent = trashEmoji;
+  userDeleteButton.classList.add("delete");
+  userContainer.appendChild(userDeleteButton);
+
   usersArray.push({ name, email, image: imageLink });
 
   users.appendChild(userContainer);
