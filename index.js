@@ -12,8 +12,7 @@
  */
 
 // constant variables
-const heartEmoji = "❤️";
-const brokenHeartEmoji = "💔";
+
 const trashEmoji = "🗑️";
 
 const usersArray = [
