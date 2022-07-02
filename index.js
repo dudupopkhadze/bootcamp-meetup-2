@@ -12,8 +12,7 @@
  */
 
 // constant variables
-const heartEmoji = "❤️";
-const brokenHeartEmoji = "💔";
+
 const trashEmoji = "🗑️";
 
 const usersArray = [
@@ -84,6 +83,12 @@ function isValidInput(name, email, image) {
   return true;
 }
 
+function handleDeleteButtonPress(event) {
+  const id = event.target.id;
+  const container = document.getElementById(id);
+  container.remove();
+}
+
 function createUserCard(name, email, imageLink) {
   const userContainer = document.createElement("div");
   userContainer.classList.add("userContainer");
@@ -101,6 +106,13 @@ function createUserCard(name, email, imageLink) {
   userImageTag.src = imageLink;
   userImageTag.classList.add("userImage");
   userContainer.appendChild(userImageTag);
+
+  const userDeleteButton = document.createElement("button");
+  userDeleteButton.id = email;
+  userDeleteButton.addEventListener("click", handleDeleteButtonPress);
+  userDeleteButton.textContent = trashEmoji;
+  userDeleteButton.classList.add("delete");
+  userContainer.appendChild(userDeleteButton);
 
   usersArray.push({ name, email, image: imageLink });
 
