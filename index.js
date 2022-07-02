@@ -125,6 +125,9 @@ function onSubmit(event) {
   }
 
   createUserCard(userName, userEmail, userImage);
+  nameInput.value = "";
+  emailInput.value = "";
+  imageInput.value = "";
 }
 
 usersArray.map(({ name, email, image }) => createUserCard(name, email, image));
